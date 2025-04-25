@@ -12,12 +12,16 @@ public class StepTracker
  public void addDailySteps(int steps){
   totalSteps += steps;
   totalDays++;
-  actDays++;
+  if(steps>=minSteps)
+   actDays++;
  }
  public int activeDays(){
-  if(totalDays==0)
+  return actDays;
+}
+ public double averageSteps(){
+  if(totalDays ==0)
    return 0.0;
   else
    return (double)totalSteps/totalDays;
  }
-} 
+}
